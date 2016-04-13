@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/noscript.css" />
+    
+    </h:head>
+    <h:body class="is-loading">
+        <div id="wrapper">
+
+            <!-- Main -->
+            <section id="main">
+                <header>
+                    <span class="avatar"><img src="images/FPTLOGO.png" alt="" /></span>
+                    <p>Information Technology Industry</p>
+                </header>
+
+                <h:form  >
+                    <div class="field">
+                        <h:inputText pt:placeholder="Username"  value="#{loginBean.account}" />
+                    </div>
+                    <div class="field">
+                        <h:inputSecret  pt:placeholder="Password" value="#{loginBean.password}"/>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox"/>
+                        
+                    </div>
+
+                    <ul class="actions">
+                        <li><p:commandButton styleClass="button" value="Login" style="text-transform: uppercase;" >
+                                <f:actionListener binding="#{loginBean.loginAction()}" />
+                                
+                            </p:commandButton>
+                        </li>
+
+                    </ul>
+
+                </h:form>
+                
+                <footer>
+                    <ul class="icons">
+                        <li><a href="#" class="fa-twitter">Twitter</a></li>
+                        <li><a href="#" class="fa-facebook">Facebook</a></li>
+                    </ul>
+                </footer>
+            </section>
+
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; Copyright 2016</li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function() {
+                    document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+                });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+            }
+        </script>
+    </h:body>
+</html>
+
